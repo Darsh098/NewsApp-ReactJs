@@ -73,7 +73,10 @@ export class News extends Component {
                         return <div className="col-md-4" key={element.url}>
                             <NewsItem title={element.title ? element.title : ""}
                                 description={element.description ? element.description.length >= 60 ? element.description.slice(0, 60) + "..." : element.description : ""}
-                                imageUrl={element.urlToImage ? element.urlToImage : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=740"} newsUrl={element.url} />
+                                imageUrl={element.urlToImage ? element.urlToImage : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=740"}
+                                newsUrl={element.url}
+                                author={element.author}
+                                publishedAt={element.publishedAt} />
                         </div>
                     })}
 
