@@ -92,6 +92,14 @@ export class News extends Component {
         }
     }
 
+    async componentDidMount() {
+        let url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=8261cbfa5baf424b9c15ab5b99958959";
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+        this.setState({ articles: parsedData.articles })
+    }
+
     render() {
         return (
             <div className="container my-3">
@@ -99,9 +107,9 @@ export class News extends Component {
                 <div className="row">
                     {this.state.articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
-                            <NewsItem title={element.title.length >= 45 ? element.title.slice(0, 45) + "..." : element.title}
-                                description={element.description.length >= 60 ? element.description.slice(0, 60) + "..." : element.description}
-                                imageUrl={element.urlToImage} newsUrl={element.url} />
+                            <NewsItem title={element.title ? element.title : ""}
+                                description={element.description ? element.description.length >= 60 ? element.description.slice(0, 60) + "..." : element.description : ""}
+                                imageUrl={element.urlToImage ? element.urlToImage : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=740"} newsUrl={element.url} />
                         </div>
                     })}
 
