@@ -5,6 +5,7 @@
 /.pnp
 .gitgnore
 .pnp.js
+/SampleOutput.json
 
 # testing
 /coverage
