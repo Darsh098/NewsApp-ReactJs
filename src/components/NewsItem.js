@@ -3,11 +3,14 @@ import React, { Component } from 'react'
 export class NewsItem extends Component {
 
     render() {
-        let { title, description, imageUrl, newsUrl, author, publishedAt } = this.props;
+        let { title, description, imageUrl, newsUrl, author, publishedAt, source } = this.props;
         return (
             <div className="card my-3">
                 <img src={imageUrl} className="card-img-top" alt="..." />
                 <div className="card-body">
+                    <span class="position-absolute top-0 translate-middle-y badge rounded-pill bg-danger" style={{ right: '0%', zIndex: 1 }}>
+                        {source.name}
+                    </span>
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
                     <p className="card-text"><small className="text-muted">

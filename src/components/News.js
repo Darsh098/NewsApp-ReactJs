@@ -76,7 +76,8 @@ export class News extends Component {
                                 imageUrl={element.urlToImage ? element.urlToImage : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=740"}
                                 newsUrl={element.url}
                                 author={element.author}
-                                publishedAt={element.publishedAt} />
+                                publishedAt={element.publishedAt}
+                                source={element.source} />
                         </div>
                     })}
 
