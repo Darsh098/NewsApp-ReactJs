@@ -9,7 +9,6 @@ const News = (props) => {
     const [loading, setLoading] = useState(false)
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
-    // document.title = props.category === "home" ? "NewsBlink - Stay Informed, In a Blink!" : "NewsBlink - " + capitalizeFirstLetter(props.category);
 
     const capitalizeFirstLetter = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -32,6 +31,7 @@ const News = (props) => {
 
     useEffect(() => {
         updateNews(0);
+        document.title = props.category === "home" ? "NewsBlink - Stay Informed, In a Blink!" : "NewsBlink - " + capitalizeFirstLetter(props.category);
     }, [])
 
     const fetchMoreData = async () => {
