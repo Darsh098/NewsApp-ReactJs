@@ -47,7 +47,7 @@ const News = (props) => {
 
     return (
         <>
-            <h2 className="text-center">NewsBlink - {props.category === "home" ? "All Headlines" : capitalizeFirstLetter(props.category)}</h2>
+            <h2 className="text-center" style={{ marginTop: '85px' }}>NewsBlink - {props.category === "home" ? "All Headlines" : capitalizeFirstLetter(props.category)}</h2>
             {/* {loading && < Spinner />} */}
             <InfiniteScroll
                 dataLength={articles.length}
